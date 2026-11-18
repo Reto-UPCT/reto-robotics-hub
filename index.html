@@ -89,6 +89,23 @@ dl.facts dd { margin: 0; font-weight: 600; }
 .audience-card:hover { border-color: var(--accent); background: var(--accent-soft); }
 .audience-card strong { font-family: var(--display); font-size: 18px; line-height: 1.3; }
 .audience-card span { color: var(--muted); font-size: 14px; }
+.retos-grid { display: grid; grid-template-columns: 1fr; gap: 36px; margin-top: 8px; }
+.reto-card { display: flex; flex-direction: column; gap: 10px; min-width: 0; scroll-margin-top: 140px; }
+.reto-card h3 { margin: 0; font-size: clamp(21px, 2.4vw, 25px); letter-spacing: -0.01em; }
+.reto-card > p { color: var(--muted); margin: 0; }
+#equipo-activo, #estudiante-explora, #uso-compartido { scroll-margin-top: 140px; }
+.reto-tag { align-self: flex-start; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.reto-steps { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--muted); }
+.reto-steps strong { color: var(--fg); font-weight: 600; }
+.reto-sub { display: flex; flex-direction: column; gap: 6px; scroll-margin-top: 140px; }
+.reto-sub + .reto-sub { margin-top: 8px; }
+.reto-sub h4 { margin: 0; font-family: var(--display); font-size: 16px; }
+#retos-activos { margin-top: 36px; scroll-margin-top: 140px; }
+#retos .lead, #equipos .lead { max-width: none; }
+#retos-activos h3 { font-size: clamp(21px, 2.4vw, 25px); letter-spacing: -0.01em; }
+#brain .group > h3, #que-hacer .group > h3 { font-size: clamp(20px, 2.1vw, 22px); letter-spacing: -0.01em; }
+#brain .item h4 { font-size: 18px; }
+#brain .group { margin-top: 12px; }
 .empty-state { padding: 20px; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; background: var(--accent-soft); }
 .empty-state p { margin-top: 6px; color: var(--muted); }
 .sponsor-banner { display: grid; grid-template-columns: minmax(110px, .45fr) minmax(0, 1.55fr); align-items: center; gap: 16px; padding: 16px 20px; border-left: 4px solid var(--accent); border-radius: 8px; background: var(--header-bg); color: #ffffff; }
@@ -98,6 +115,11 @@ dl.facts dd { margin: 0; font-weight: 600; }
 /* Fichas de equipo */
 .robot { display: flex; flex-direction: column; gap: 18px; padding-top: 8px; }
 .robot + .robot { border-top: 1px dashed var(--line); padding-top: 36px; }
+.robot-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.robot-main, .robot-side { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.robot-main > p { margin: 0; }
+.robot-side .viewer { margin: 0; }
+@media (max-width: 820px) { .robot-grid { grid-template-columns: 1fr; } }
 .robot-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
 .status { display: inline-block; font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
 .status.ok { background: var(--ok-bg); color: var(--ok); }
@@ -119,6 +141,30 @@ table.kv caption { text-align: left; font-family: var(--display); font-weight: 6
 .item { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .item h4 { margin: 0; font-family: var(--display); font-size: 16px; }
 .item p { color: var(--muted); font-size: 15px; }
+.access { margin-top: 0; display: flex; flex-direction: column; gap: 14px; }
+.access-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.access-head > div { flex: 1 1 420px; min-width: 0; }
+.access-head h2 { margin: 0 0 10px; }
+.access-head p { color: var(--muted); margin: 0; }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.btn-primary:hover { background: #0000cc; }
+.btn-primary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.access .note { margin: 0; }
+.contact-title { margin-top: 24px; font-size: clamp(21px, 2.4vw, 25px); }
+.contact-title + .lead { max-width: none; }
+.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); border: 1px solid var(--line); border-radius: 8px; background: var(--surface); margin-top: 0; }
+.contact-col { padding: 18px 22px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.contact-col + .contact-col { border-left: 1px solid var(--line); }
+.contact-col h3 { margin: 0; }
+.contact-col p { color: var(--muted); font-size: 15px; margin: 0; }
+@media (max-width: 720px) {
+  .contact-card { grid-template-columns: 1fr; }
+  .contact-col + .contact-col { border-left: 0; border-top: 1px solid var(--line); }
+}
+.people { list-style: none; margin: 2px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px 24px; }
+.people li { display: flex; flex-direction: column; gap: 2px; }
+.people strong { font-weight: 600; color: var(--fg); }
+.people a { font-size: 15px; overflow-wrap: anywhere; }
 .note { font-size: 15px; color: var(--muted); border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; }
 
 /* Brain */
@@ -151,6 +197,84 @@ figcaption b { color: var(--fg); font-weight: 600; }
 .galeria figcaption { padding: 10px 12px; font-size: 14px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .galeria img { transition: none; } }
 .sala-fig { margin-top: 24px; }
+.group > p { color: var(--muted); max-width: none; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.stat { border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.stat-num { font-family: var(--display); font-size: 32px; font-weight: 600; line-height: 1.1; color: var(--accent); }
+.stat p { color: var(--muted); font-size: 15px; }
+.lidar-intro { color: var(--muted); margin: 4px 0 0; }
+.lidar-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.lidar-fig { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.lidar-fig img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #333; }
+.lidar-fig figcaption { padding: 10px 14px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+.ui-figure { margin: 4px 0 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.ui-figure figcaption { padding: 10px 14px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+.ui-frame { position: relative; overflow: hidden; background: #eef0f3; }
+.ui { --u-ink: #1f2328; --u-muted: #6b7280; --u-line: #e3e6ea; --u-blue: #1f3fd1; --u-red: #d7262a; --u-green: #1f9d55;
+  width: 1180px; transform-origin: 0 0; font-family: var(--body); color: var(--u-ink); font-size: 13px; line-height: 1.35; background: #eef0f3; }
+.ui * { box-sizing: border-box; }
+.ui-top { display: flex; align-items: center; gap: 28px; height: 54px; padding: 0 16px; background: #fff; border-bottom: 1px solid var(--u-line); }
+.ui-brand { display: flex; align-items: center; gap: 8px; font-size: 16px; }
+.ui-brand small { color: var(--u-muted); font-size: 11px; }
+.ui-logo { width: 24px; height: 24px; border: 2px solid var(--u-blue); border-radius: 6px; position: relative; }
+.ui-logo::after { content: ""; position: absolute; left: 4px; right: 4px; top: 9px; height: 2px; background: var(--u-blue); transform: rotate(-25deg); }
+.ui-tabs { display: flex; gap: 22px; height: 100%; }
+.ui-tabs span { display: flex; align-items: center; font-size: 14px; color: #3a3f45; border-bottom: 2px solid transparent; }
+.ui-tabs span.on { color: var(--u-ink); font-weight: 600; border-bottom-color: var(--u-blue); }
+.ui-status { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.ui-pill { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border: 1px solid var(--u-line); border-radius: 999px; font-size: 12px; color: #3a3f45; background: #fff; }
+.ui-pill i.ok { width: 8px; height: 8px; border-radius: 50%; background: var(--u-green); }
+.ui-rec { border-radius: 6px; font-weight: 600; }
+.ui-pill i.ring { width: 9px; height: 9px; border-radius: 50%; border: 2px solid #3a3f45; }
+.ui-stop { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 16px; border-radius: 6px; background: var(--u-red); color: #fff; font-weight: 700; letter-spacing: .02em; }
+.ui-stop i { width: 10px; height: 10px; background: #fff; border-radius: 2px; }
+.ui-sub { display: flex; gap: 4px; padding: 8px 16px; background: #fff; border-bottom: 1px solid var(--u-line); }
+.ui-sub span { padding: 6px 12px; border: 1px solid var(--u-line); border-radius: 6px; font-size: 13px; color: #3a3f45; }
+.ui-sub span.on { background: var(--u-blue); border-color: var(--u-blue); color: #fff; font-weight: 600; }
+.ui-body { display: grid; grid-template-columns: 1fr 250px; }
+.ui-main { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 18px; align-content: start; }
+.ui-card { background: #fff; border: 1px solid var(--u-line); border-radius: 10px; padding: 14px 16px; }
+.ui-card h5 { margin: 0; font-size: 14px; font-weight: 700; font-family: var(--body); }
+.ui-meta { margin: 2px 0 10px; color: var(--u-muted); font-size: 11.5px; }
+.ui-kv { display: grid; grid-template-columns: 1fr auto; gap: 5px 12px; margin: 0; }
+.ui-kv dt { color: #4b5258; }
+.ui-kv dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.ui-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ui-table th { font-weight: 500; color: var(--u-muted); text-align: right; padding: 3px 4px; }
+.ui-table td { padding: 4px; text-align: right; font-variant-numeric: tabular-nums; border-top: 1px solid #f0f1f3; }
+.ui-table th:first-child, .ui-table td:first-child { text-align: left; }
+.ui-if th:nth-child(2), .ui-if td:nth-child(2) { text-align: left; }
+.ui-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #e3f4ea; color: #1b7a43; font-size: 11px; }
+.ui-side { background: #fff; border-left: 1px solid var(--u-line); padding: 14px; font-size: 12px; }
+.ui-side h6 { margin: 0 0 6px; font-size: 12.5px; font-weight: 700; font-family: var(--body); }
+.ui-side hr { border: 0; border-top: 1px solid var(--u-line); margin: 12px 0; }
+.ui-cam { display: flex; align-items: center; gap: 6px; margin: 0 0 8px; font-weight: 600; }
+.ui-cam i { width: 8px; height: 8px; border-radius: 50%; background: #4b5258; }
+.ui-btn { display: block; text-align: center; padding: 8px; border-radius: 6px; background: var(--u-blue); color: #fff; font-weight: 600; }
+.ui-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.ui-row label { color: var(--u-muted); font-size: 11px; display: flex; flex-direction: column; gap: 4px; }
+.ui-select { border: 1px solid var(--u-line); border-radius: 5px; padding: 5px 7px; color: var(--u-ink); font-size: 12px; }
+.ui-check { display: flex; align-items: center; gap: 6px; margin: 10px 0 0; font-size: 11.5px; }
+.ui-check i { width: 12px; height: 12px; border-radius: 3px; background: var(--u-blue); }
+.ui-batt { margin: 0; color: var(--u-muted); }
+.ui-batt b { font-size: 22px; color: var(--u-ink); }
+.ui-bar { display: block; height: 4px; border-radius: 2px; background: #e7e9ec; margin: 6px 0 10px; }
+.ui-bar i { display: block; width: 40%; height: 100%; border-radius: 2px; background: var(--u-green); }
+.ui-kv-s { font-size: 11.5px; }
+.ui-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ui-list li { display: flex; justify-content: space-between; padding-left: 14px; position: relative; }
+.ui-list li::before { content: ""; position: absolute; left: 0; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: var(--u-green); }
+.ui-list span { color: var(--u-muted); }
+.shot-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; aspect-ratio: 16 / 5; min-height: 160px; border: 2px dashed var(--line); border-radius: 8px; background: var(--accent-soft); color: var(--muted); text-align: center; padding: 16px; }
+.shot-placeholder span { font-weight: 600; color: var(--fg); }
+.shot-placeholder small { font-size: 14px; }
+#validacion, #acceso-equipos { scroll-margin-top: 140px; }
+.items.two, .items.stack { grid-template-columns: 1fr; }
+@media (min-width: 720px) { .items.two { grid-template-columns: 1fr 1fr; } }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92em; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+.item .list { margin: 0; color: var(--muted); font-size: 15px; }
+#brain .lead { max-width: none; }
+.video-prueba.video-brain { margin: 8px auto 0; max-width: 960px; }
 .video-prueba { margin: 20px auto 0; max-width: 760px; }
 .video-prueba video { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 16 / 9; background: #000; }
 .video-prueba figcaption { padding: 10px 14px; font-size: 14px; color: var(--muted); }
@@ -189,6 +313,7 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
 .footer-upct { width: min(270px, 68vw); max-height: 72px; height: auto; }
 .footer-reto { width: 38px; height: 38px; filter: invert(1); }
 .footer-inner p { text-align: right; }
+.footer-date { display: inline-block; margin-top: 4px; font-size: 13px; color: #8f8f8f; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 @media (max-width: 720px) {
   .brand-row { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; min-height: 0; padding-block: 10px; }
@@ -220,15 +345,13 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
     <nav class="section-nav" aria-label="Apartados">
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proponer">Proponer un reto</a></li>
-        <li><a href="#retos">Retos activos</a></li>
-        <li><a href="#participar">Participar</a></li>
+        <li><a href="#retos">Retos</a></li>
         <li><a href="#equipos">Robots</a></li>
-        <li><a href="#que-hacer">Pruebas Go2</a></li>
+        <li><a href="#que-hacer">Desarrollo Go2</a></li>
         <li><a href="#brain">Brain Hub</a></li>
         <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Acceso</a></li>
         <li><a href="#normas">Normas y seguridad</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -250,79 +373,70 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
       <nav class="audience-grid" aria-label="Accesos según tu objetivo">
         <a class="audience-card" href="#proponer"><strong>Quiero proponer un reto</strong><span>Orientación para profesorado · Empezar por aquí →</span></a>
         <a class="audience-card" href="#participar"><strong>Busco un reto como estudiante</strong><span>Cómo encontrar un equipo o sumarte a uno →</span></a>
-        <a class="audience-card" href="#equipo-activo"><strong>Ya trabajo en un reto con robots</strong><span>Coordinación y pautas para los equipos →</span></a>
-        <a class="audience-card" href="#contacto"><strong>Quiero información o contactar</strong><span>Escribe al equipo de Reto-UPCT →</span></a>
+        <a class="audience-card" href="#acceso-equipos"><strong>Ya trabajo en un reto con robots</strong><span>Cómo trabajar con el robot: web, SDK y turnos →</span></a>
+        <a class="audience-card" href="#contacto"><strong>Quiero contactar</strong><span>Escribe al equipo de Reto-UPCT →</span></a>
       </nav>
       <dl class="facts">
         <div><dt>Ubicación</dt><dd>ETSIT · Aula PB4</dd></div>
         <div><dt>Contacto general</dt><dd><a href="mailto:retos@upct.es">retos@upct.es</a></dd></div>
-        <div><dt>Uso de los robots</dt><dd>Compartido y coordinado con el equipo de la sala</dd></div>
+        <div><dt>Uso de los robots</dt><dd>Coordinado con el equipo de la sala y con reserva previa</dd></div>
       </dl>
       <figure class="viewer sala-fig">
         <div id="sala3d" class="sala3d" role="img" aria-label="Modelo 3D aproximado de la sala Reto-Robotics-Hub: nave de dos tramos con bóvedas de arista de ladrillo, pilares granates, pared amarilla, pizarra al fondo, mesas, taburetes y el robot Go2"><p class="loading">Cargando modelo 3D…</p></div>
         <figcaption>
-          <span>Arrastra para girar · rueda o pellizco para acercar · modelo aproximado de la sala</span>
+          <span>Modelo 3D aproximado de la sala Reto-Robotics-Hub.</span>
         </figcaption>
       </figure>
     </div>
   </section>
 
   <!-- PROPONER UN RETO: mantener este recorrido breve y accionable. -->
-  <section id="proponer">
-    <div class="wrap">
-      <div class="eyebrow">Para profesorado</div>
-      <h2>¿Quieres proponer un reto que use los robots de la Sala Reto-Robotics-Hub?</h2>
-      <p class="lead">El primer paso recomendado es escribir a <a href="mailto:retos@upct.es?subject=Idea%20de%20reto%20para%20la%20Sala%20Reto-Robotics-Hub">retos@upct.es</a> y contar brevemente la idea. No hace falta tener la propuesta cerrada: el equipo te orientará y te facilitará las instrucciones para continuar.</p>
-      <p>La propuesta debe plantearse con los robots de esta sala. El Unitree Go2 Pro ya está disponible para trabajar en retos; la presencia y disponibilidad del Unitree R1 Edu Smart están pendientes de confirmación. Consulta el estado y la información del <a href="#go2">Go2</a> y del <a href="#r1">R1</a> en la sección <a href="#equipos">Robots de la sala</a>.</p>
-      <div class="items">
-        <article class="item">
-          <h3>1. Cuéntanos qué te gustaría explorar</h3>
-          <p>En unas líneas, explica qué problema o necesidad quieres abordar y por qué podría tener sentido trabajar con un robot.</p>
-        </article>
-        <article class="item">
-          <h3>2. Habla con el equipo de la sala</h3>
-          <p>El equipo te ayudará a valorar el encaje, los recursos y los siguientes pasos para preparar la propuesta del reto.</p>
-        </article>
-        <article class="item">
-          <h3>3. Planifica el uso compartido</h3>
-          <p>Los robots son recursos compartidos. El equipo de la sala acompañará la coordinación con otros proyectos durante el proceso.</p>
-        </article>
-      </div>
-      <p class="note">El Go2 está disponible y se comparte entre proyectos, por lo que las sesiones se coordinan con el equipo de la sala. La disponibilidad del R1 se confirmará cuando se conozca su estado.</p>
-    </div>
-  </section>
-
-  <!-- Becarios: añadir aquí solo retos publicados, con el nombre y enlace; no duplicar sus fichas. -->
   <section id="retos">
     <div class="wrap">
       <div class="eyebrow">Retos con robots</div>
-      <h2>Retos activos en la sala</h2>
-      <p class="lead">Cuando haya retos activos que trabajen con los robots de la sala, aquí encontrarás un enlace a cada uno.</p>
-      <div class="empty-state">
-        <strong>Todavía no hay retos activos publicados.</strong>
-        <p>Vuelve a consultar esta sección para descubrir los proyectos que se incorporen.</p>
-      </div>
-    </div>
-  </section>
+      <h2>Retos</h2>
+      <p class="lead">El profesorado puede proponer retos que utilicen los robots de la Sala Reto-Robotics-Hub, y los estudiantes pueden sumarse a los que ya estén en marcha.</p>
 
-  <!-- Equipo de sala: decidir un mecanismo sencillo y mantenerlo actualizado. Excel en SharePoint es solo una opción a valorar, no una decisión. -->
-  <section id="participar">
-    <div class="wrap">
-      <div class="eyebrow">Para estudiantes y equipos</div>
-      <h2>¿En qué momento estás?</h2>
-      <div class="items">
-        <article class="item" id="estudiante-explora">
-          <h3>Estoy buscando un reto</h3>
-          <p>Consulta la lista de <a href="#retos">retos activos con robots</a>. Si te interesa uno, visita su ficha y contacta con la persona coordinadora para preguntar cómo incorporarte, igual que en cualquier otro reto de Reto-UPCT.</p>
+      <div class="retos-grid">
+        <article class="reto-card" id="proponer">
+          <span class="reto-tag">Para profesorado</span>
+          <h3>¿Quieres proponer un reto que use los robots de la sala?</h3>
+          <p>El primer paso recomendado es escribir a <a href="mailto:retos@upct.es?subject=Idea%20de%20reto%20para%20la%20Sala%20Reto-Robotics-Hub">retos@upct.es</a> y contar brevemente la idea. No hace falta tener la propuesta cerrada: el equipo te orientará y te facilitará las instrucciones para continuar.</p>
+          <ol class="reto-steps">
+            <li><strong>Cuéntanos qué te gustaría explorar.</strong> En unas líneas, explica qué problema o necesidad quieres abordar y por qué podría tener sentido trabajar con un robot.</li>
+            <li><strong>Habla con el equipo de la sala.</strong> El equipo te ayudará a valorar el encaje, los recursos y los siguientes pasos para preparar la propuesta del reto.</li>
+            <li><strong>Planifica el uso compartido.</strong> Los robots son recursos compartidos; las sesiones se reservan como se explica en <a href="#contacto">Acceso</a>.</li>
+          </ol>
+          <p class="reto-foot">La propuesta debe plantearse con los robots de esta sala. Consulta el estado y la información del Go2 y del R1 en <a href="#equipos">Robots</a>.</p>
         </article>
-        <article class="item" id="equipo-activo">
-          <h3>Ya formo parte de un reto</h3>
-          <p>Coordina tu trabajo con la persona responsable de tu reto y sigue las indicaciones del equipo de la sala antes de utilizar un robot o sus módulos. El equipo de la sala os acompañará durante la planificación y el trabajo.</p>
+
+        <article class="reto-card" id="participar">
+          <span class="reto-tag">Para estudiantes y equipos</span>
+          <h3>¿En qué momento estás?</h3>
+          <div class="items">
+            <article class="item" id="estudiante-explora">
+              <h4>Estoy buscando un reto</h4>
+              <p>Consulta la lista de <a href="#retos-activos">retos activos con robots</a>. Si te interesa uno, visita su ficha y contacta con la persona coordinadora para preguntar cómo incorporarte, igual que en cualquier otro reto de Reto-UPCT.</p>
+            </article>
+            <article class="item" id="equipo-activo">
+              <h4>Ya formo parte de un reto</h4>
+              <p>Coordina tu trabajo con la persona responsable de tu reto y sigue las indicaciones del equipo de la sala antes de utilizar un robot o sus módulos. Dicho equipo os acompañará durante la planificación y el trabajo.</p>
+            </article>
+            <article class="item" id="uso-compartido">
+              <h4>Cómo se organiza el uso</h4>
+              <p>Un mismo robot puede apoyar varios retos. Para compatibilizar los proyectos, cada equipo reserva sus sesiones con antelación y el personal responsable de la sala coordina la disponibilidad. Consulta cómo reservar en <a href="#contacto">Acceso</a>.</p>
+            </article>
+          </div>
         </article>
-        <article class="item" id="uso-compartido">
-          <h3>Cómo se organiza el uso</h3>
-          <p>Un mismo robot puede apoyar varios retos. Para compatibilizar los proyectos, la disponibilidad y las sesiones se coordinan entre los equipos con ayuda del personal responsable de la sala.</p>
-        </article>
+      </div>
+
+      <!-- Becarios: añadir aquí solo retos publicados, con el nombre y enlace; no duplicar sus fichas. -->
+      <div class="group" id="retos-activos">
+        <h3>Retos activos en la sala</h3>
+        <div class="empty-state">
+          <strong>Todavía no hay retos activos publicados.</strong>
+          <p>Cuando haya retos activos que trabajen con los robots de la sala, aquí encontrarás un enlace a cada uno.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -331,59 +445,57 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
   <section id="equipos">
     <div class="wrap">
       <div class="eyebrow">Equipamiento</div>
-      <h2>Robots de la sala</h2>
-      <p class="lead">La sala dispone del Unitree Go2 Pro, disponible para trabajar en retos. La presencia y disponibilidad del humanoide Unitree R1 Edu Smart todavía están por confirmar. Las fichas técnicas conservan información del material inicial; la coordinación de uso del Go2 se realiza con el equipo de la sala.</p>
+      <h2>Robots</h2>
+      <p class="lead">La sala dispone del Unitree Go2 Pro, preparado para trabajar en retos. Próximamente se incorporará el humanoide Unitree R1 Edu Smart.</p>
 
       <!-- Nota para becarios: habrá un repositorio complementario con material para programar el Go2. Añadir aquí su enlace cuando esté creado y dar acceso únicamente a quienes vayan a programar con este robot. No publicar aquí material de acceso restringido. -->
       <article class="robot" aria-labelledby="go2">
         <div class="robot-head"><h3 id="go2">Unitree Go2 Pro</h3><span class="status ok">Disponible para retos</span></div>
-        <div class="hero-fig go2-fig">
-          <div class="text">
-            <p>El Unitree Go2 Pro es un robot cuadrúpedo de unos 15 kg, parecido en tamaño a un perro mediano, capaz de caminar, correr, subir escalones y moverse con agilidad por espacios interiores y exteriores. Gracias a su LiDAR 4D y a su cámara frontal percibe el entorno a su alrededor, puede generar mapas del espacio y detectar obstáculos para esquivarlos. Además, se comunica por Wi-Fi y 4G y transmite imagen en tiempo real, lo que lo convierte en una plataforma muy versátil para proyectos de navegación, percepción e interacción.</p>
-          </div>
-          <figure class="viewer">
-            <div id="go23d" class="canvas3d" role="img" aria-label="Modelo 3D del Unitree Go2 de pie, en gris con la cabeza LiDAR negra"><p class="loading">Cargando modelo 3D…</p></div>
-            <figcaption><span>Arrastra para girar · rueda o pellizco para acercar · modelo de <a href="https://github.com/unitreerobotics/unitree_mujoco" target="_blank" rel="noopener">Unitree Robotics</a> (<a href="modelo/licencia-unitree.txt" target="_blank" rel="noopener">licencia BSD-3</a>)</span></figcaption>
-          </figure>
-        </div>
-        <div class="cols">
-          <div class="group">
+        <div class="robot-grid">
+          <div class="robot-main">
+            <p>El Unitree Go2 Pro es un robot cuadrúpedo de unos 15 kg, parecido en tamaño a un perro mediano, capaz de caminar, correr y moverse con agilidad por espacios interiores y exteriores. Gracias a su LiDAR 4D y a su cámara frontal percibe el entorno a su alrededor, puede generar mapas del espacio y detectar obstáculos para esquivarlos. Además, se comunica por Wi-Fi y 4G y transmite imagen en tiempo real, lo que lo convierte en una plataforma muy versátil para proyectos de navegación, percepción e interacción.</p>
+            <div class="group">
             <h4 style="margin:0;font-family:var(--display);font-size:17px">Qué ofrece según el fabricante</h4>
             <ul class="list">
-              <li><strong>Movilidad ágil:</strong> robot cuadrúpedo de unos 15 kg que camina y corre a hasta 3,5 m/s.</li>
-              <li><strong>Percepción del entorno:</strong> un LiDAR 4D L2 con visión de 360° × 96° le permite detectar obstáculos desde 5 cm, esquivarlos y generar mapas 3D del espacio.</li>
+              <li><strong>Movilidad ágil:</strong> robot cuadrúpedo que camina y corre alcanzando hasta 3,5 m/s.</li>
+              <li><strong>Percepción del entorno:</strong> un LiDAR 4D L2 con visión de 360° × 96° le permite detectar obstáculos y generar mapas 3D del espacio.</li>
               <li><strong>Visión en tiempo real:</strong> una cámara gran angular HD (1080p, 120°) transmite imagen en directo a la aplicación.</li>
-              <li><strong>Interacción por voz:</strong> micrófono y altavoz integrados para dar órdenes de voz y usar el intercomunicador.</li>
+              <li><strong>Interacción por voz:</strong> micrófono y altavoz integrados para dar órdenes de voz.</li>
               <li><strong>Conectividad:</strong> Wi-Fi.</li>
               <li><strong>Control desde la aplicación:</strong> la app Unitree Go permite manejarlo a distancia, ver la cámara y el mapa, tomar fotos y vídeos y lanzar acciones predefinidas.</li>
-              <li><strong>Autonomía:</strong> entre 1 y 2 horas con su batería inteligente de 8000 mAh.</li>
+              <li><strong>Autonomía:</strong> entre 1 y 2 horas (batería de 8000 mAh).</li>
 
             </ul>
+          </div>
+            <div class="group">
+              <h4 style="margin:0;font-family:var(--display);font-size:17px">Cómo se controla</h4>
+              <ul class="list">
+                <li><strong>Mando manual.</strong> Funciona como un mando de consola que permite movimientos predeterminados a través de comandos.</li>
+                <li><strong>Mando pequeño.</strong> Mando cuyas órdenes tienen prioridad sobre las del resto de controles. Solo permite movimientos de desplazamiento, como avanzar o girar.</li>
+                <li><strong>Aplicación Unitree Go.</strong> Se conecta a la red Wi-Fi propia del robot.</li>
+              </ul>
+            </div>
             <p class="links"><span>Más información:</span>
               <a href="https://www.unitree.com/go2" target="_blank" rel="noopener">Web oficial del Go2</a>
               <a href="https://support.unitree.com/home/en/developer/about_Go2" target="_blank" rel="noopener">Documentación técnica del Go2</a>
               <a href="https://marketing.unitree.com/article/en/Go2/User_Manual.html" target="_blank" rel="noopener">Manual de uso del Go2 (Unitree, en inglés)</a>
             </p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:22px">
-            <div class="group">
-              <h4 style="margin:0;font-family:var(--display);font-size:17px">Cómo se controla</h4>
-              <ul class="list">
-                <li><strong>Mando manual.</strong> Funciona como un mando de consola permitiendo movimientos predeterminados a través de comandos.</li>
-                <li><strong>Mando pequeño.</strong> Mando cuyas órdenes tienen prioridad sobre las del resto de controles. Solo permite movimientos de desplazamiento, como avanzar o girar.</li>
-                <li><strong>Aplicación Unitree Go.</strong> Se conecta por Wi-Fi propio del robot.</li>
-              </ul>
-            </div>
+          <div class="robot-side">
+            <figure class="viewer">
+            <div id="go23d" class="canvas3d" role="img" aria-label="Modelo 3D del Unitree Go2 de pie, en gris con la cabeza LiDAR negra"><p class="loading">Cargando modelo 3D…</p></div>
+            <figcaption><span>Modelo aproximado del Unitree Go2 Pro · A partir de los archivos de <a href="https://github.com/unitreerobotics/unitree_mujoco" target="_blank" rel="noopener">Unitree Robotics</a> (<a href="modelo/licencia-unitree.txt" target="_blank" rel="noopener">licencia BSD-3</a>)</span></figcaption>
+          </figure>
+            
             <div style="overflow-x:auto">
               <table class="kv">
                 <caption>En la sala</caption>
                 <tbody>
                   <tr><th scope="row">Versión</th><td>Go2 Pro</td></tr>
                   <tr><th scope="row">Tipo</th><td>Cuadrúpedo</td></tr>
-                  <tr><th scope="row">Estado</th><td>Disponible para retos; uso compartido y coordinado con el equipo de la sala</td></tr>
+                  <tr><th scope="row">Estado</th><td>Disponible para retos</td></tr>
                   <tr><th scope="row">Conexión con el Brain</th><td>Ethernet</td></tr>
-                  <tr><th scope="row">Ordenador asociado</th><td>OMEN Gaming Laptop 16</td></tr>
-                  <tr><th scope="row">Datos que ofrece</th><td>Cámara, LiDAR, posición, estado, micrófono y altavoz</td></tr>
+                  <tr><th scope="row">Datos que ofrece</th><td>Cámara, LiDAR, posición, batería y estado del robot</td></tr>
                 </tbody>
               </table>
             </div>
@@ -393,23 +505,16 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
 
       <!-- Nota para becarios: habrá un repositorio complementario para el material de programación del humanoide, incluidas OpenAPI si corresponde. Añadir aquí su enlace cuando esté creado y dar acceso únicamente a quienes vayan a programar con este robot. No publicar aquí material de acceso restringido. -->
       <article class="robot" aria-labelledby="r1">
-        <div class="robot-head"><h3 id="r1">Unitree R1 Edu Smart</h3><span class="status wait">Presencia y disponibilidad por confirmar</span></div>
-        <div class="hero-fig go2-fig">
-          <div class="text">
+        <div class="robot-head"><h3 id="r1">Unitree R1 Edu Smart</h3><span class="status wait">Próximamente</span></div>
+        <div class="robot-grid">
+          <div class="robot-main">
             <p>El Unitree R1 EDU es un robot humanoide ligero y ágil, de 1,23 m de altura y unos 29 kg, pensado para la investigación. Gracias a sus 26 articulaciones, puede andar, mantener el equilibrio y moverse con soltura, y su cabeza móvil le ayuda a percibir mejor lo que tiene alrededor. Ve el entorno con una cámara binocular y escucha con un conjunto de cuatro micrófonos, y además integra un modelo de inteligencia artificial. La versión EDU está abierta al desarrollo: da acceso a sus articulaciones y sensores, es compatible con las principales plataformas de simulación y admite ampliaciones como manos diestras o un módulo de cálculo Jetson Orin. Esto la convierte en una plataforma muy completa para proyectos de movimiento, percepción e interacción.</p>
-          </div>
-          <figure class="viewer">
-            <div id="r13d" class="canvas3d tall" role="img" aria-label="Modelo 3D del humanoide Unitree R1"><p class="loading">Cargando modelo 3D…</p></div>
-            <figcaption><span>Arrastra para girar · rueda o pellizco para acercar · modelo de <a href="https://github.com/unitreerobotics/unitree_mujoco" target="_blank" rel="noopener">Unitree Robotics</a> (<a href="modelo/licencia-unitree.txt" target="_blank" rel="noopener">licencia BSD-3</a>)</span></figcaption>
-          </figure>
-        </div>
-        <div class="cols">
-          <div class="group">
+            <div class="group">
             <h4 style="margin:0;font-family:var(--display);font-size:17px">Qué ofrece según el fabricante</h4>
             <ul class="list">
-              <li><strong>Movilidad ágil.</strong> De 20 a 26 grados de libertad según la versión, para adaptarse a escenarios complejos.</li>
-              <li><strong>Estructura ligera y fácil de mantener.</strong> Mide como máximo 1,23 m y pesa unos 29 kg, lista para usar desde el primer momento.</li>
-              <li><strong>IA multimodal.</strong> Integrado con un modelo grande de voz e imagen.</li>
+              <li><strong>Movilidad ágil.</strong> De 20 a 26 grados de libertad, para adaptarse a escenarios complejos.</li>
+              <li><strong>Estructura ligera y fácil de mantener.</strong> Su tamaño reducido lo hace manejable en espacios interiores y en entornos de trabajo con personas.</li>
+              <li><strong>IA multimodal.</strong> Integrado con un modelo de inteligencia artificial.</li>
               <li><strong>Interfaces abiertas.</strong> Control de articulaciones y sensores abierto, con soporte de las plataformas de simulación habituales.</li>
             </ul>
             <p class="links"><span>Más información:</span>
@@ -418,70 +523,79 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
               <a href="https://www.docs.mybotshop.de/downloads/R1_User_Manual.pdf" target="_blank" rel="noopener">Manual de usuario del R1 (MYBOTSHOP, en inglés)</a>
             </p>
           </div>
-          <div style="overflow-x:auto">
+          </div>
+          <div class="robot-side">
+            <figure class="viewer">
+            <div id="r13d" class="canvas3d" role="img" aria-label="Modelo 3D del humanoide Unitree R1"><p class="loading">Cargando modelo 3D…</p></div>
+            <figcaption><span>Modelo aproximado del Unitree R1 Edu Smart · A partir de los archivos de <a href="https://github.com/unitreerobotics/unitree_mujoco" target="_blank" rel="noopener">Unitree Robotics</a> (<a href="modelo/licencia-unitree.txt" target="_blank" rel="noopener">licencia BSD-3</a>)</span></figcaption>
+          </figure>
+            <div style="overflow-x:auto">
             <table class="kv">
               <caption>En la sala</caption>
               <tbody>
                 <tr><th scope="row">Versión</th><td>R1 Edu Smart (SKU AEV-R1-0109)</td></tr>
                 <tr><th scope="row">Tipo</th><td>Humanoide</td></tr>
-                <tr><th scope="row">Estado</th><td>Confirmar con el equipo de la sala si ya está en la sala y cuándo podrá utilizarse</td></tr>
+                <tr><th scope="row">Estado</th><td>Próxima incorporación</td></tr>
                 <tr><th scope="row">Ordenador asociado</th><td>Módulo de cálculo de 100 TOPS (Jetson Orin, por confirmar)</td></tr>
               </tbody>
             </table>
+          </div>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- QUÉ SE PUEDE HACER -->
+  <!-- DESARROLLO GO2 -->
   <section id="que-hacer">
     <div class="wrap">
-      <div class="eyebrow">Capacidades y pruebas</div>
-      <h2>Desarrollo con el Go2</h2>
-      <p class="lead">El material técnico inicial describe trabajos de navegación, simulación y una interfaz web para el Go2, además de una API y SDK en preparación. El estado de cada desarrollo y las condiciones para que otros equipos lo utilicen deben confirmarse con el equipo de la sala.</p>
-      <p class="note">Las pruebas y cifras de esta sección se conservan de la documentación inicial. Antes de presentarlas como capacidades actuales o disponibles para nuevos retos, el equipo de la sala debe confirmar su alcance y vigencia.</p>
+      <div class="eyebrow">Desarrollo y pruebas</div>
+      <h2>Desarrollo Go2</h2>
+      <p class="lead">El Go2 cuenta con un sistema propio de navegación autónoma, probado en la sala y validado en simulación, y con una web de control desde la que se puede operar el robot sin necesidad de programar. Para quienes quieran desarrollar sus propios programas, dispone además de un SDK y una API, descritos en <a href="#brain">Brain Hub</a>.</p>
 
       <div class="group">
-        <h3>Navegación y adaptación al entorno</h3>
+        <h3>Navegación autónoma</h3>
         <div class="items">
-          <div class="item"><h4>Navegación autónoma</h4><p>El robot no se limita a ejecutar una trayectoria: interpreta el entorno mientras avanza, detecta obstáculos, modifica el recorrido y busca alternativas para seguir hacia el destino. Combina la ruta global con un motor propio que decide cómo recorrerla, usando la posición, la odometría y los datos del LiDAR.</p></div>
-          <div class="item"><h4>Replanificación en marcha</h4><p>Al acercarse a un obstáculo, el motor evalúa el espacio y modifica la trayectoria sin necesidad, en condiciones normales, de detenerse a calcular una alternativa. Es una navegación dinámica, en lugar de encadenar avances, paradas y nuevos arranques.</p></div>
-          <div class="item"><h4>Obstáculos fijos y personas</h4><p>Evita obstáculos estáticos y dinámicos, incluidas personas que interrumpen el paso. Con observación y espacio suficientes, anticipa el conflicto y busca un recorrido alternativo mientras sigue avanzando. Las paradas quedan para situaciones que necesitan una comprobación: una aparición repentina muy próxima, un hueco de viabilidad dudosa o un bloqueo. Dispone de maniobras cortas de recuperación, incluido el retroceso cuando hay espacio.</p></div>
+          <div class="item"><h4>Navegación y replanificación</h4><p>El robot no se limita a seguir una trayectoria: interpreta el entorno mientras avanza y modifica el recorrido para llegar al destino. Combina la ruta global con un motor propio que decide cómo recorrerla, a partir de la posición, la odometría y los datos del LiDAR. En una navegación continua, al acercarse a un obstáculo recalcula la trayectoria sin detenerse.</p></div>
+          <div class="item"><h4>Obstáculos y personas</h4><p>Evita obstáculos fijos y en movimiento, incluidas personas que se cruzan en su camino. Cuando tiene espacio, anticipa el conflicto y busca otro recorrido sin dejar de avanzar. Solo se detiene cuando necesita comprobar la situación, como ante una aparición repentina muy cercana o un hueco dudoso. Dispone de maniobras cortas de recuperación, incluido el retroceso.</p></div>
+          <div class="item"><h4>Pasos estrechos y bloqueos</h4><p>Antes de entrar en un paso estrecho ajusta su orientación y su velocidad. Si el camino está bloqueado, busca una ruta alternativa o explora zonas de las que aún no tiene información; si no hay salida, se detiene y vuelve a evaluar el entorno. Durante el recorrido prioriza avanzar de frente, evitando desplazamientos laterales o de espaldas innecesarios.</p></div>
+        </div>
+        <p class="lidar-intro">Así percibe el Go2 una sala: con su LiDAR construye una representación 3D del entorno, que el motor de navegación utiliza para localizarse y decidir el recorrido.</p>
+        <div class="lidar-figs">
+          <figure class="lidar-fig"><img src="img/lidar-nube.jpg" alt="Nube de puntos de la sala captada por el LiDAR del Go2, coloreada por distancia" width="1200" height="750" loading="lazy"><figcaption>Nube de puntos de la sala captada por el LiDAR.</figcaption></figure>
+          <figure class="lidar-fig"><img src="img/lidar-voxeles.jpg" alt="Mapa 3D de la sala en vóxeles generado a partir del LiDAR del Go2, coloreado por altura" width="1200" height="750" loading="lazy"><figcaption>Mapa 3D de la sala generado a partir del LiDAR.</figcaption></figure>
         </div>
       </div>
 
       <div class="group">
-        <h3>Pruebas descritas en el material inicial</h3>
-        <div class="items">
-          <div class="item"><h4>Bloqueos y rodeos</h4><p>Se ha probado con bloqueos de varios metros y con obstáculos que impiden ir directo al destino. El LiDAR detecta el bloqueo a unos 3 metros, y el robot busca una ruta alternativa o se dirige a zonas donde el LiDAR aún no tiene información para generarla por ahí. Si no hay alternativa viable, permanece detenido y vuelve a evaluar el entorno, dentro de los límites de la misión.</p></div>
-          <div class="item"><h4>Pasos estrechos</h4><p>Antes de entrar ajusta su orientación y adapta la velocidad al espacio disponible. En la sala se separó la zona con taburetes y se dejó un único hueco estrecho: el Go2 pasó con unos 18 cm a cada lado del cuerpo, sin tocar ningún objeto.</p></div>
-          <div class="item"><h4>Orientación durante el seguimiento</h4><p>Prioriza avanzar mirando hacia el sentido de la ruta, evitando desplazamientos largos de espaldas o laterales innecesarios. Las maniobras de recuperación son acciones puntuales.</p></div>
+        <h3>Prueba en sala</h3>
+        <div class="stats">
+          <div class="stat"><span class="stat-num">≈ 3 m</span><p>Distancia a la que el LiDAR detecta un bloqueo de varios metros y el robot empieza a buscar una alternativa.</p></div>
+          <div class="stat"><span class="stat-num">≈ 18 cm</span><p>Margen a cada lado del cuerpo con el que atravesó un paso estrecho entre taburetes, sin tocar ningún objeto.</p></div>
         </div>
         <figure class="video-prueba">
           <video controls preload="none" playsinline poster="video/prueba-sala.jpg" width="1280" height="720">
             <source src="video/prueba-sala.mp4" type="video/mp4">
           </video>
-          <figcaption>Vídeo del material inicial: el Go2 se desplaza por la sala esquivando objetos.</figcaption>
+          <figcaption>El Go2 se desplaza esquivando objetos.</figcaption>
         </figure>
       </div>
 
       <div class="group">
-        <h3>Validación y banco de simulación</h3>
+        <h3>Control desde el navegador</h3>
+        <p>La web de control se ejecuta en el propio Brain y reúne en una sola interfaz todo lo necesario para operar y supervisar el robot. Así, los equipos pueden trabajar con el Go2 directamente, sin conocimientos de programación.</p>
         <div class="items">
-          <div class="item"><h4>Banco de simulación</h4><p>Ejecuta el motor de navegación sobre una representación virtual del robot, sus sensores y los obstáculos. Se han acumulado del orden de 100.000 ejecuciones entre versiones y escenarios, con la capacidad de cálculo del ordenador de los becarios. Permite descartar versiones antes de llevarlas al Go2 y reducir el trabajo de campo.</p></div>
-          <div class="item"><h4>Escenarios de prueba</h4><p>Pasillos, obstáculos bajos, personas que cruzan, pasos estrechos, arranques bloqueados, cambios de destino, llegadas junto a muebles y recuperaciones desde zonas con poco espacio. Los problemas observados en el robot real se convierten en escenarios reproducibles para comprobar las correcciones.</p></div>
-          <div class="item"><h4>Comparación entre versiones</h4><p>Cada motor candidato pasa por las baterías de simulación. Se conservan las versiones anteriores y sus resultados, para comparar cambios en las mismas condiciones y recuperar una base conocida si una modificación empeora el funcionamiento. La simulación no sustituye a la prueba física.</p></div>
+          <div class="item"><h4>Supervisión</h4><p>Mapa y posición del robot, cámara en directo, captura de imágenes y vídeo, datos del LiDAR y de otros sensores, y estado del sistema.</p></div>
+          <div class="item"><h4>Navegación</h4><p>Elegir destinos sobre el mapa, guardar puntos con nombre y ejecutar recorridos de varios puntos. Se puede seguir cada misión, regresar al origen, y parar o cancelar en cualquier momento.</p></div>
+          <div class="item"><h4>Turno y recursos</h4><p>Consultar qué equipo tiene el turno de control y descargar el SDK, la especificación OpenAPI, la guía y los ejemplos de uso.</p></div>
         </div>
+        <p class="note">¿Quieres programar el robot? El SDK de Python ofrece estas mismas funciones desde código. Consulta cómo acceden los equipos en <a href="#acceso-equipos">Brain Hub</a>.</p>
       </div>
 
       <div class="group">
-        <h3>Interfaz web y adquisición de datos</h3>
-        <div class="items">
-          <div class="item"><h4>Interfaz web común</h4><p>Una sola aplicación, con pestañas y una conexión compartida con el robot: cámara, modelo 3D del Go2 con los datos del LiDAR, mapa y posición, batería, temperaturas y otros estados que publica el robot.</p></div>
-          <div class="item"><h4>Navegación desde la web</h4><p>Desde la web se eligen los destinos directamente sobre el mapa, se guardan puntos con nombre y se preparan recorridos de varios puntos. También se puede seguir el estado de cada misión y ver su resultado, e iniciar, cancelar o detener el robot en cualquier momento.</p></div>
-          <div class="item"><h4>Acceso desde cualquier dispositivo</h4><p>Basta conectarse a la red que creará el Brain e introducir en el navegador su dirección IP. Desde cualquier dispositivo se pueden enviar misiones y recibir los sensores y datos del Go2.</p></div>
-        </div>
+        <h3>Banco de simulación</h3>
+        <p>Antes de llegar al Go2, cada versión del motor de navegación se prueba en un banco de simulación: una representación virtual del robot, sus sensores y los obstáculos. Se han acumulado del orden de 100.000 ejecuciones en escenarios como pasillos, obstáculos bajos, personas que cruzan, pasos estrechos o arranques bloqueados. Los problemas observados en el robot real se convierten en nuevos escenarios para comprobar las correcciones.</p>
+        <p class="note">El mismo criterio se aplica a los módulos de los equipos: se validan en simulación antes de probarse en el robot real. Consulta la <a href="#validacion">validación de módulos</a>.</p>
       </div>
     </div>
   </section>
@@ -489,52 +603,130 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
   <!-- BRAIN -->
   <section id="brain">
     <div class="wrap">
-      <div class="eyebrow">Diseño de plataforma</div>
+      <div class="eyebrow">Plataforma</div>
       <h2>Brain Hub</h2>
-      <div class="hero-fig">
-        <div class="text">
-          <p>Brain Hub es el nombre de la plataforma descrita en la propuesta inicial para conectar el Go2, una aplicación web y los proyectos de Reto-UPCT. El diseño busca que puedan incorporarse distintos retos sin rehacer la solución en cada ocasión.</p>
-          <p>La propuesta describe una base que se fija al Go2 y un módulo extraíble con carcasa impresa en 3D. También plantea raíles laterales para fijar módulos preparados por los equipos.</p>
-        </div>
-        <figure class="viewer">
-          <div id="brain3d" class="canvas3d" role="img" aria-label="Modelo 3D aproximado del Brain: carcasa azul, tapa, raíles laterales negros y base de anclaje"><p class="loading">Cargando modelo 3D…</p></div>
-          <figcaption>
-            <span>Arrastra para girar · rueda o pellizco para acercar · modelo aproximado</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <p class="note">Esta sección describe el diseño y las funciones previstas en el material inicial; no implica que todos sus componentes estén implementados o disponibles. El equipo de la sala confirmará el estado actual y el acceso de cada proyecto.</p>
+      <p class="lead">Brain Hub es la plataforma desarrollada en la UPCT que conecta el Go2 con los equipos de Reto-UPCT. Reúne el software que se comunica con el robot, gestiona su navegación y da acceso a los equipos, de modo que puedan incorporarse nuevos retos sin rehacer la solución en cada ocasión.</p>
+      <p class="lead">Va montado sobre el Go2 en dos partes: una base fija y un módulo extraíble con carcasa impresa en 3D, que incorpora raíles laterales para que los equipos fijen sus propios módulos.</p>
+      <figure class="video-prueba video-brain">
+        <video controls muted loop playsinline preload="metadata" poster="video/go2-brain.jpg" width="1280" height="720">
+          <source src="video/go2-brain.mp4" type="video/mp4">
+        </video>
+        <figcaption>Brain Hub montado sobre el Go2.</figcaption>
+      </figure>
 
       <div class="group">
-        <h3>Funciones previstas en el diseño</h3>
+        <h3>Funciones</h3>
         <div class="items">
-          <div class="item"><h4>Software y comunicación con el robot</h4><p>El diseño plantea ejecutar en el Brain la conexión con el Go2, la navegación, los servicios de sensores y las comprobaciones de seguridad.</p></div>
-          <div class="item"><h4>Interfaz web</h4><p>La propuesta contempla una aplicación para consultar la cámara, el mapa y los sensores, y enviar misiones al robot.</p></div>
-          <div class="item"><h4>Integración de los equipos</h4><p>Se plantea una API para que cada reto pueda acceder a las funciones autorizadas. Su estado y las condiciones de uso deben confirmarse antes de ofrecerla a otros equipos.</p></div>
+          <div class="item"><h4>Núcleo de comunicación y servicios</h4><p>Mantiene la conexión con el Go2 y centraliza el acceso a la telemetría, la cámara, el LiDAR, los mapas y las órdenes de control.</p></div>
+          <div class="item"><h4>Motor de navegación</h4><p>Planifica y ejecuta los desplazamientos, sigue los recorridos y gestiona los obstáculos, las paradas y las cancelaciones.</p></div>
+          <div class="item"><h4>Pasarela de acceso para los equipos</h4><p>Comprueba la identidad y los permisos de cada equipo antes de atender sus peticiones, gestiona el turno de control y registra la actividad.</p></div>
         </div>
-        <p class="note">La propuesta inicial contempla que el ordenador de los becarios sirva como apoyo opcional para el procesamiento más exigente.</p>
+        <p class="note">Esta separación permite que los equipos desarrollen sus retos sin modificar el software interno de navegación ni utilizar las credenciales del robot.</p>
       </div>
 
-      <div class="group">
-        <h3>Estructura propuesta</h3>
-        <div class="cols">
-          <ul class="list">
-            <li><strong>Montaje en dos partes.</strong> Una base que queda fijada al Go2 y un módulo extraíble con todos los componentes. Para retirarlo basta con quitar cuatro tornillos y desconectar la alimentación, sin desmontar el cableado interno.</li>
-            <li><strong>Uso en mesa o sobre el robot.</strong> El mismo módulo sirve para trabajar en el laboratorio y para montarlo en el Go2, lo que facilita las pruebas y el mantenimiento.</li>
-            <li><strong>Ventilación integrada.</strong> Ranuras en las esquinas y en la tapa, además del ventilador propio del ordenador.</li>
-          </ul>
-          <ul class="list">
-            <li><strong>Carcasa impresa en 3D.</strong> Diseñada a medida, con formas redondeadas y dividida en dos mitades atornilladas, para abrirla fácilmente.</li>
-            <li><strong>Componentes en el interior.</strong> Un ordenador, que procesa los datos del robot y ejecuta la aplicación, y un router, que genera la red a la que se conectan los dispositivos.</li>
-            <li><strong>Raíles laterales para módulos de Retos.</strong> A ambos lados de la carcasa, para que los equipos fijen sus propios módulos.</li>
-          </ul>
+      <div class="group" id="acceso-equipos">
+        <h3>Acceso para los equipos</h3>
+        <p>Los equipos trabajan con el robot a través de dos interfaces complementarias, que utilizan la misma API y respetan los permisos asignados.</p>
+        <div class="items stack">
+          <div class="item"><h4>Web local</h4><p>Disponible en la red de la sala, en la dirección <code>http://brainhub.local</code>. Permite visualizar los datos y operar el robot de forma gráfica, sin programar.</p></div>
+          <figure class="ui-figure">
+            <div class="ui-frame" role="img" aria-label="Pestaña Estados de la web de control: batería, temperatura, orientación, ángulos de las 12 articulaciones, modo y velocidad del robot, e interfaces de datos activas">
+              <div class="ui" aria-hidden="true">
+                <div class="ui-top">
+                  <div class="ui-brand"><span class="ui-logo"></span><b>Brain UPCT</b><small>1B</small></div>
+                  <nav class="ui-tabs"><span>Navegación</span><span class="on">Sensores</span><span>Mapa</span><span>Sistema</span></nav>
+                  <div class="ui-status">
+                    <span class="ui-pill"><i class="ok"></i>Go2 · Ethernet</span>
+                    <span class="ui-pill"><i class="ok"></i>Motor 86H</span>
+                    <span class="ui-pill ui-rec"><i class="ring"></i>REC</span>
+                    <span class="ui-stop"><i></i>PARAR</span>
+                  </div>
+                </div>
+                <div class="ui-sub"><span>Cámara</span><span>Go2 en 3D y LiDAR</span><span class="on">Estados</span></div>
+                <div class="ui-body">
+                  <div class="ui-main">
+                    <div class="ui-card">
+                      <h5>Cuerpo</h5><p class="ui-meta">LowState del robot · 1 Hz · edad 0,27 s</p>
+                      <dl class="ui-kv"><dt>Batería</dt><dd>40 %</dd><dt>Temperatura</dt><dd>46 °C</dd><dt>Alabeo · cabeceo · guiñada</dt><dd>−0,4° · 1,7° · −0,2°</dd></dl>
+                    </div>
+                    <div class="ui-card">
+                      <h5>Patas</h5><p class="ui-meta">Ángulos de las 12 articulaciones.</p>
+                      <table class="ui-table"><thead><tr><th></th><th>Cadera</th><th>Muslo</th><th>Pantorrilla</th><th>Temp. máx.</th></tr></thead>
+                      <tbody><tr><td>Delantera derecha</td><td>0°</td><td>43°</td><td>−87°</td><td>37 °C</td></tr><tr><td>Delantera izquierda</td><td>4°</td><td>46°</td><td>−85°</td><td>37 °C</td></tr><tr><td>Trasera derecha</td><td>4°</td><td>37°</td><td>−87°</td><td>44 °C</td></tr><tr><td>Trasera izquierda</td><td>−5°</td><td>44°</td><td>−87°</td><td>44 °C</td></tr></tbody></table>
+                    </div>
+                    <div class="ui-card">
+                      <h5>Modo deportivo</h5><p class="ui-meta">SportModeState · 20 Hz · edad 0,09 s</p>
+                      <dl class="ui-kv"><dt>Modo</dt><dd>Parado</dd><dt>Marcha</dt><dd>0</dd><dt>Velocidad (m/s)</dt><dd>0,01 · 0,00 · −0,03</dd><dt>Posición publicada (m)</dt><dd>3,53 · 0,18 · 0,31</dd><dt>Altura del cuerpo</dt><dd>0,32 m</dd><dt>Velocidad de giro</dt><dd>0,01 rad/s</dd></dl>
+                    </div>
+                    <div class="ui-card">
+                      <h5>Interfaces del robot</h5><p class="ui-meta">Escucha continua · solo lectura.</p>
+                      <table class="ui-table ui-if"><thead><tr><th>Interfaz</th><th>Estado</th><th>Mensajes</th><th>Hz</th></tr></thead>
+                      <tbody>
+                        <tr><td>Estado del LiDAR</td><td><span class="ui-badge">datos recientes</span></td><td>1470</td><td>5,0</td></tr>
+                        <tr><td>Pose del robot (LiDAR)</td><td><span class="ui-badge">datos recientes</span></td><td>5497</td><td>18,8</td></tr>
+                        <tr><td>Malla del LiDAR</td><td><span class="ui-badge">datos recientes</span></td><td>2264</td><td>7,7</td></tr>
+                        <tr><td>Estado múltiple</td><td><span class="ui-badge">datos recientes</span></td><td>293</td><td>1,0</td></tr>
+                        <tr><td>UWB (mando)</td><td><span class="ui-badge">datos recientes</span></td><td>1464</td><td>5,5</td></tr>
+                      </tbody></table>
+                    </div>
+                  </div>
+                  <aside class="ui-side">
+                    <h6>Cámara</h6>
+                    <p class="ui-cam"><i></i>Cámara apagada</p>
+                    <span class="ui-btn">Encender cámara</span>
+                    <div class="ui-row"><label>Calidad de imagen<span class="ui-select">Alta · 960 px</span></label><label>Máx. imágenes por s<span class="ui-select">30</span></label></div>
+                    <p class="ui-check"><i></i>Pausar la cámara durante las misiones</p>
+                    <hr>
+                    <h6>Go2 ahora</h6>
+                    <p class="ui-batt"><b>40</b> % batería <small>46 °C</small></p>
+                    <span class="ui-bar"><i></i></span>
+                    <dl class="ui-kv ui-kv-s"><dt>Alabeo · cabeceo · guiñada</dt><dd>0° · 2° · 0°</dd><dt>Velocidad</dt><dd>0,01 m/s</dd><dt>Modo</dt><dd>Parado</dd></dl>
+                    <hr>
+                    <h6>Interfaces del robot</h6>
+                    <ul class="ui-list"><li>Estado del LiDAR<span>5,0 Hz</span></li><li>Pose del robot (LiDAR)<span>18,8 Hz</span></li><li>Malla del LiDAR<span>7,7 Hz</span></li><li>Estado múltiple<span>1,0 Hz</span></li><li>UWB (mando)<span>5,9 Hz</span></li></ul>
+                  </aside>
+                </div>
+              </div>
+            </div>
+            <figcaption>Pestaña «Estados» de la web de control: estado del cuerpo, articulaciones, movimiento e interfaces de datos del robot.</figcaption>
+          </figure>
+          <div class="item"><h4>SDK de Python</h4><p>Ofrece las mismas capacidades desde código, mediante funciones simplificadas, para integrarlas en programas propios y combinarlas con la lógica y los sensores adicionales de cada reto.</p></div>
+          <div class="item"><h4>Material para los equipos</h4>
+            <ul class="list">
+              <li><strong>SDK de Python.</strong></li>
+              <li><strong>Especificación OpenAPI.</strong> Documenta las operaciones, los parámetros y las respuestas del servicio, y facilita la integración desde otros lenguajes.</li>
+              <li><strong>Guía para equipos.</strong> Procedimiento de acceso, gestión del turno, permisos y ejemplos de uso.</li>
+              <li><strong>Programas de prueba.</strong></li>
+            </ul>
+            <p>Todo el material se descarga desde la web local.</p>
+          </div>
+          <div class="item"><h4>Acceso seguro</h4><p>Cada equipo dispone de un token propio, asociado a su rol y a sus permisos, que le entregan los responsables de la sala. Sin token no se puede mover el robot, y el control solo es posible durante las sesiones autorizadas en la sala (ver <a href="#contacto">Acceso</a> para reservar una sesión).</p></div>
+          <div class="item"><h4>Qué puede hacer un equipo</h4>
+            <ul class="list">
+              <li>Consultar el estado del robot: posición, velocidad, batería y modo.</li>
+              <li>Usar la cámara: imagen en directo, fotos y secuencias de imágenes.</li>
+              <li>Recibir los datos del LiDAR y eventos en directo, como el inicio y el fin de cada misión, los obstáculos o los avisos.</li>
+              <li>Mover el robot: ir a un punto, girar, recorrer rutas de hasta 20 puntos y volver a la posición de inicio.</li>
+              <li>Comprobar si un punto es alcanzable sin mover el robot.</li>
+            </ul>
+          </div>
+          <div class="item"><h4>Turno de control</h4>
+            <ul class="list">
+              <li>Solo un equipo mueve el robot a la vez.</li>
+              <li>El turno caduca si el programa deja de responder. Al caducar, el robot se detiene.</li>
+              <li>Parar y cancelar están siempre disponibles, para cualquier equipo.</li>
+              <li>Cada equipo tiene límites de velocidad, de zona del mapa y de número de puntos por ruta.</li>
+              <li>Antes de mover el robot hay que confirmar que la zona está despejada.</li>
+              <li>Todas las órdenes quedan registradas.</li>
+            </ul>
+          </div>
         </div>
+        <p class="note"><strong>Requisitos:</strong> Python 3.8 o superior, sin librerías adicionales, o cualquier otro lenguaje a través de la API documentada con OpenAPI. Esta versión no incluye micrófono, reproducción de audio ni cambios de postura del robot.</p>
       </div>
 
-      <div class="group">
-        <h3>Validación de módulos: flujo propuesto</h3>
-        <p>El material inicial propone validar cada módulo en el banco de simulación antes de conectarlo al Go2. La herramienta se describe como una representación virtual del robot, sus sensores y los obstáculos. El procedimiento vigente debe confirmarse con el equipo responsable.</p>
+      <div class="group" id="validacion">
+        <h3>Validación de módulos</h3>
+        <p>Antes de conectarse al Go2, cada módulo se valida en el banco de simulación: una representación virtual del robot, sus sensores y los obstáculos.</p>
         <div class="items">
           <div class="item"><h4>1. Prueba en simulación</h4><p>El módulo se ejecuta sobre el robot virtual en escenarios como pasillos, pasos estrechos, obstáculos bajos o personas que cruzan. Así se comprueba cómo se comporta junto al Go2 antes de tocar el equipo real.</p></div>
           <div class="item"><h4>2. Revisión de resultados</h4><p>Si el módulo falla o su comportamiento es mejorable, el equipo lo corrige y lo vuelve a pasar por las pruebas. Cada versión queda guardada con sus resultados, para comparar cambios en las mismas condiciones.</p></div>
@@ -550,7 +742,7 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
     <div class="wrap">
       <div class="eyebrow">Fotos</div>
       <h2>Galería</h2>
-      <p class="lead">Imágenes de la sala y de los equipos recogidas en el material inicial.</p>
+      <p class="lead">Imágenes de la sala y del Go2.</p>
       <div class="galeria">
           <figure><a href="galeria/sala-3.jpg" target="_blank" rel="noopener"><img src="galeria/sala-3.jpg" alt="Desde la ventana, hacia la pizarra" loading="lazy" width="1600" height="680"></a></figure>
           <figure><a href="galeria/sala-10.jpg" target="_blank" rel="noopener"><img src="galeria/sala-10.jpg" alt="La sala desde la entrada, con la pared amarilla y la pizarra al fondo" loading="lazy" width="1600" height="900"></a></figure>
@@ -562,23 +754,73 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
     </div>
   </section>
 
+  <!-- Equipo de sala: completar nombres y funciones cuando estén confirmados; no publicar datos personales sin autorización. -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="eyebrow">Acceso y contacto</div>
+      <div class="access" id="reservas">
+        <div class="access-head">
+          <div>
+            <h2>Acceso a la sala</h2>
+            <p>Puedes reservar el uso de los robots en la sala a través de Microsoft Bookings, con una cuenta de la UPCT.</p>
+          </div>
+          <a class="btn-primary" href="https://bookings.cloud.microsoft/book/SalaRetoRoboticsHub@UPCT.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer">Reservar una sesión</a>
+        </div>
+        <div class="items">
+          <article class="item">
+            <h4>1. Elige día y hora</h4>
+            <p>Abre la página de reservas y selecciona una de las franjas disponibles.</p>
+          </article>
+          <article class="item">
+            <h4>2. Completa tus datos</h4>
+            <p>Indica tu nombre, apellidos y correo, el reto en el que participas y una breve descripción de la prueba que quieres hacer.</p>
+          </article>
+          <article class="item">
+            <h4>3. Recibe la confirmación</h4>
+            <p>Te llegará un correo de confirmación con la reserva.</p>
+          </article>
+          <article class="item">
+            <h4>4. Revisión de la reserva</h4>
+            <p>Si la franja no se puede atender, los responsables cancelarán la reserva o te propondrán otro horario, y te avisarán por correo.</p>
+          </article>
+        </div>
+        <p class="note">Durante la sesión debe estar presente un responsable de la sala y se aplican las <a href="#normas">normas de uso y seguridad</a>.</p>
+      </div>
+      <h2 class="contact-title">Habla con el equipo de la sala</h2>
+      <p class="lead">El equipo responsable orienta las propuestas, ayuda a coordinar el uso compartido de los robots y acompaña a los proyectos durante su trabajo en la sala.</p>
+      <div class="contact-card">
+        <div class="contact-col">
+          <h3>Contacto general</h3>
+          <p>Para consultar cómo proponer un reto, participar en uno o informarte sobre el acceso, escribe a <a href="mailto:retos@upct.es">retos@upct.es</a>.</p>
+        </div>
+        <div class="contact-col">
+          <h3>Responsables de la sala</h3>
+          <ul class="people">
+            <li><strong>Jaime Sánchez Ardil</strong><a href="mailto:jaime.sanchez2@edu.upct.es">jaime.sanchez2@edu.upct.es</a></li>
+            <li><strong>Lucía López Martínez</strong><a href="mailto:lucia.lopez2@edu.upct.es">lucia.lopez2@edu.upct.es</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- NORMAS -->
   <section id="normas">
     <div class="wrap">
       <div class="eyebrow">Uso de la sala</div>
       <h2>Normas y seguridad</h2>
-      <p class="lead">Estas pautas reúnen la propuesta inicial para el uso responsable de la sala y sus equipos. Sirven como orientación mientras el equipo responsable confirma y mantiene las indicaciones aplicables a cada actividad.</p>
+      <p class="lead">Estas pautas reúnen la propuesta inicial para el uso responsable de la sala y sus equipos.</p>
       <p class="note">Estas normas pueden modificarse y adaptarse. Antes de trabajar con un robot, consulta con el equipo de la sala las instrucciones vigentes; esta página no sustituye sus indicaciones.</p>
       <div class="group">
         <ol class="normas">
-          <li class="norma"><div class="norma-head"><span class="norma-n">1</span><h4>Acceso y autorización</h4></div><ul class="list"><li>El acceso a la sala se coordina con el equipo responsable antes de cada actividad.</li><li>La disponibilidad de los robots se organiza entre los equipos con apoyo del equipo de la sala.</li><li>El número de equipos y el uso de cada robot se acuerdan para cada actividad.</li><li>Si para una actividad se asignan cuentas, permisos o claves, serán personales e intransferibles. No se comparten credenciales.</li></ul></li>
-          <li class="norma"><div class="norma-head"><span class="norma-n">2</span><h4>Supervisión y responsabilidades</h4></div><ul class="list"><li>Los alumnos usarán los equipos siempre bajo la supervisión de una persona responsable, que conoce el robot y puede pararlo en cualquier momento.</li><li>Nadie se queda solo en la sala con un robot encendido.</li><li>El responsable puede detener una prueba o terminar la sesión en cualquier momento si considera que hay riesgo. Sus indicaciones se siguen siempre.</li><li>Cada equipo responde del uso que hace de los robots y de los módulos que aporta. Los daños causados por no seguir estas normas o las indicaciones del responsable serán responsabilidad de quien los cause.</li><li>Los robots y sus accesorios no salen de la sala ni se usan en otros espacios sin autorización expresa.</li></ul></li>
+          <li class="norma"><div class="norma-head"><span class="norma-n">1</span><h4>Acceso y autorización</h4></div><ul class="list"><li>El acceso a la sala se coordina con el equipo responsable antes de cada actividad.</li><li>La disponibilidad de los robots se organiza entre los equipos con apoyo del equipo de la sala.</li><li>El número de equipos y el uso de cada robot se acuerdan para cada actividad.</li><li>Los tokens y permisos asignados a cada equipo son personales e intransferibles. No se comparten credenciales.</li></ul></li>
+          <li class="norma"><div class="norma-head"><span class="norma-n">2</span><h4>Supervisión y responsabilidades</h4></div><ul class="list"><li>Los estudiantes usarán los equipos siempre bajo la supervisión de una persona responsable, que conoce el robot y puede pararlo en cualquier momento.</li><li>Nadie se queda solo en la sala con un robot encendido.</li><li>El responsable puede detener una prueba o terminar la sesión en cualquier momento si considera que hay riesgo. Sus indicaciones se siguen siempre.</li><li>Cada equipo responde del uso que hace de los robots y de los módulos que aporta. Los daños causados por no seguir estas normas o las indicaciones del responsable serán responsabilidad de quien los cause.</li><li>Los robots y sus accesorios no salen de la sala ni se usan en otros espacios sin autorización expresa.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">3</span><h4>Antes de usar un robot</h4></div><ul class="list"><li>Despejar la zona de pruebas y retirar objetos frágiles, cables por el suelo y mochilas.</li><li>Revisar el robot: batería cargada, sin piezas sueltas ni daños visibles y con los módulos bien fijados, cuando proceda.</li><li>La persona responsable explicará cómo detener el robot y comprobará el método de parada aplicable antes de empezar.</li><li>Antes de introducir un nuevo módulo que pueda afectar al robot se requerirá la aprobación del responsable.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">4</span><h4>Durante el uso</h4></div><ul class="list"><li>Mantener accesible el mecanismo de parada que indique la persona responsable.</li><li>Distancia de seguridad: no acercarse al robot en movimiento ni tocarlo mientras se desplaza. Mantener las manos lejos de las articulaciones, que pueden pillar los dedos.</li><li>No subirse ni sentarse sobre el robot, no empujarlo ni ponerle cargas que no estén autorizadas.</li><li>Las pruebas nuevas se realizarán primero en simulación cuando esté disponible y, después, en el robot real con supervisión y las condiciones indicadas por el responsable.</li><li>El robot se usa solo en el suelo de la zona de pruebas: nunca sobre mesas, en zonas mojadas o fuera de la sala.</li><li>No levantar ni transportar el robot mientras está encendido.</li><li>Sin comida ni bebida en la zona de pruebas.</li><li>Si el robot falla (cae, pierde la red o hace un movimiento inesperado), se detiene y se avisa al responsable. No se intenta recogerlo con él en marcha.</li></ul></li>
-          <li class="norma"><div class="norma-head"><span class="norma-n">5</span><h4>Control técnico del robot</h4></div><ul class="list"><li>El acceso técnico se realiza según el procedimiento que indique el equipo responsable. Si se habilitan la aplicación web y la API del Brain, se usarán únicamente con los permisos autorizados para el proyecto.</li><li>El mando del fabricante y la aplicación Unitree Go quedan reservados a las personas responsables, salvo indicación distinta del equipo.</li><li>No se modifica el firmware, no se desactivan sistemas de seguridad ni se conecta directamente al robot sin autorización.</li><li>Si se habilita un registro técnico de uso, se seguirá el procedimiento que indique el equipo para revisar incidencias.</li></ul></li>
+          <li class="norma"><div class="norma-head"><span class="norma-n">5</span><h4>Control técnico del robot</h4></div><ul class="list"><li>El acceso técnico se realiza según el procedimiento que indique el equipo responsable. La aplicación web y la API del Brain se usarán únicamente con los permisos autorizados para el proyecto.</li><li>El mando del fabricante y la aplicación Unitree Go quedan reservados a las personas responsables, salvo indicación distinta del equipo.</li><li>No se modifica el firmware, no se desactivan sistemas de seguridad ni se conecta directamente al robot sin autorización.</li><li>Si se habilita un registro técnico de uso, se seguirá el procedimiento que indique el equipo para revisar incidencias.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">6</span><h4>Módulos de los equipos</h4></div><ul class="list"><li>Cada módulo se presenta y se revisa antes de montarlo o conectarlo por primera vez.</li><li>Los módulos se fijan solo en los puntos previstos y autorizados. No se modifica la estructura del robot ni de la carcasa.</li><li>Se conectan solo a los puertos que autorice el responsable. No se abre la carcasa ni se conectan baterías o fuentes de alimentación propias sin autorización.</li><li>Un módulo no debe tapar sensores ni rejillas de ventilación, ni sobresalir de forma que pueda golpear a personas u objetos.</li><li>El peso y el tamaño de cada módulo deben contar con la aprobación del responsable.</li><li>Al terminar la sesión, cada equipo retira su módulo, salvo que se acuerde lo contrario.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">7</span><h4>Baterías y carga</h4></div><ul class="list"><li>Cargar solo con el cargador original, bajo supervisión.</li><li>No dejar baterías cargando sin nadie en la sala, ni usar baterías hinchadas, golpeadas o dañadas.</li><li>Las baterías solo las colocan, retiran y guardan los responsables.</li></ul></li>
-          <li class="norma"><div class="norma-head"><span class="norma-n">8</span><h4>Humanoide R1</h4></div><ul class="list"><li>Las pautas específicas se completarán si el R1 se incorpora a la sala y antes de cualquier actividad con ese equipo.</li></ul></li>
+          <li class="norma"><div class="norma-head"><span class="norma-n">8</span><h4>Humanoide R1</h4></div><ul class="list"><li>Las pautas específicas se completarán cuando el R1 se incorpore a la sala y antes de cualquier actividad con ese equipo.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">9</span><h4>Incidencias y emergencias</h4></div><ul class="list"><li>Cualquier golpe, caída, fallo o daño, por pequeño que sea, se comunica al responsable y se registra según el procedimiento de incidencias vigente.</li><li>Si alguien se lesiona, se avisa de inmediato al responsable y se siguen los protocolos de emergencia de la universidad.</li><li>Un robot con daños no se vuelve a usar hasta que lo revise un responsable.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">10</span><h4>Fin de sesión</h4></div><ul class="list"><li>Al apagar el robot, debe estar en su posición de reposo. Avisar siempre al responsable antes de desconectarlo.</li><li>Poner a cargar lo necesario, ordenar la sala y comunicar las incidencias.</li><li>Si la sesión se gestiona desde una aplicación, cerrarla al terminar.</li></ul></li>
           <li class="norma"><div class="norma-head"><span class="norma-n">11</span><h4>Incumplimiento</h4></div><ul class="list"><li>No cumplir estas normas o las indicaciones del responsable puede suponer la retirada temporal o definitiva del acceso a la sala y a los equipos.</li></ul></li>
@@ -587,24 +829,6 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
     </div>
   </section>
 
-  <!-- Equipo de sala: completar nombres y funciones cuando estén confirmados; no publicar datos personales sin autorización. -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="eyebrow">Contacto y acceso</div>
-      <h2>Habla con el equipo de la sala</h2>
-      <p class="lead">El equipo responsable orienta las propuestas, ayuda a coordinar el uso compartido de los robots y acompaña a los proyectos durante su trabajo en la sala.</p>
-      <div class="items">
-        <article class="item">
-          <h3>Contacto general</h3>
-          <p>Para consultar cómo proponer un reto, participar en uno o informarte sobre el acceso, escribe a <a href="mailto:retos@upct.es">retos@upct.es</a>.</p>
-        </article>
-        <article class="item">
-          <h3>Responsables de la sala</h3>
-          <p>Para conocer quién acompaña cada proyecto, contacta con el equipo de Reto-UPCT. Los nombres y funciones del equipo de la sala se incorporarán aquí cuando estén confirmados.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -617,95 +841,12 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
         <img class="footer-reto" src="assets/brand/reto-mark.png" alt="">
       </a>
     </div>
-    <p>Sala Reto-Robotics-Hub · Universidad Politécnica de Cartagena · ETSIT, aula PB4</p>
+    <p>Sala Reto-Robotics-Hub · Universidad Politécnica de Cartagena · ETSIT, aula PB4<br><span class="footer-date">Última actualización: <time datetime="2026-11-17">17 de noviembre de 2026</time></span></p>
   </div>
 </footer>
 
-<script>
-  // Logotipos de Brain Hub y Reto UPCT (tapa y caras delantera y trasera), dibujados como calcomanías sobre el modelo.
-  function addLogos(scene, renderer) {
-    const BLUE = '#1260c9', INK = '#16181c';
-    function texture(kind) {
-      const c = document.createElement('canvas'); c.width = 1024; c.height = kind === 'tapa' ? 768 : 512;
-      const g = c.getContext('2d'); g.textBaseline = 'middle'; g.lineJoin = 'round';
-      const font = (px, w) => (w || 500) + ' ' + px + 'px "Helvetica Neue", Arial, sans-serif';
-      function reto(x, y, s) {           // dos cuadrados escalonados "RE" / "TO" y el texto "UPCT"
-        g.fillStyle = INK; g.fillRect(x, y, s, s); g.fillRect(x + s * 0.55, y + s * 0.78, s, s * 0.8);
-        g.fillStyle = BLUE; g.font = font(s * 0.42, 700); g.textAlign = 'center';
-        g.fillText('RE', x + s * 0.5, y + s * 0.4); g.fillText('TO', x + s * 1.05, y + s * 1.2);
-        g.fillStyle = INK; g.font = font(s * 0.62, 400); g.textAlign = 'left'; g.fillText('UPCT', x + s * 1.6, y + s * 1.25);
-      }
-      function hub(x, y, s) {            // cuadrado "HU" / "B"
-        g.fillStyle = INK; g.fillRect(x, y, s, s);
-        g.fillStyle = BLUE; g.font = font(s * 0.36, 700); g.textAlign = 'center';
-        g.fillText('HU', x + s * 0.42, y + s * 0.33); g.fillText('B', x + s * 0.68, y + s * 0.72);
-      }
-      function brain(x, y, px) { g.fillStyle = INK; g.font = font(px, 400); g.textAlign = 'left'; g.fillText('BRAIN', x, y); }
-      if (kind === 'tapa') { brain(440, 245, 140); reto(110, 335, 160); hub(730, 355, 165); }
-      else { brain(70, 95, 120); reto(70, 190, 125); hub(760, 150, 150); }
-      const t = new THREE.CanvasTexture(c); t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t;
-    }
-    function decal(kind, w, h, pos, normal) {
-      const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({
-        map: texture(kind), transparent: true, roughness: 0.6, metalness: 0, polygonOffset: true, polygonOffsetFactor: -2 }));
-      m.position.set(pos[0], pos[1], pos[2]);
-      if (normal) { m.up.set(0, 0, 1); m.lookAt(pos[0] + normal[0], pos[1] + normal[1], pos[2] + normal[2]); }
-      scene.add(m);
-    }
-    decal('tapa', 250, 188, [0, 0, 64.2]);                    // tapa (mm, Z hacia arriba)
-    decal('cara', 116, 58, [-142.9, 0, 27], [-1, 0, 0]);     // cara trasera
-    decal('cara', 116, 58, [142.9, 0, 27], [1, 0, 0]);       // cara delantera
-  }
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script>
-  // Visor 3D de Brain: carga las piezas (mm, Z arriba) y permite alternar montado / explosionado.
-  (function () {
-    const box = document.getElementById('brain3d');
-    if (!window.THREE || !box) return;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(35, 1, 1, 5000);
-    camera.up.set(0, 0, 1);
-    camera.position.set(500, -540, 400);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    box.appendChild(renderer.domElement);
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x8a93a0, 0.75));
-    const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(200, -300, 500); scene.add(sun);
-    const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(-300, 250, 150); scene.add(fill);
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, 0, 25); controls.enableDamping = true; controls.minDistance = 240; controls.maxDistance = 1400;
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    controls.autoRotate = !reduce; controls.autoRotateSpeed = 0.8;
-    renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
-    const parts = []; let t = 0, target = 0;
-    function resize() { const w = box.clientWidth, h = box.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
-    new ResizeObserver(resize).observe(box); resize();
-    cargarModelo('modelo/brain_modelo.json').then(data => {
-      data.piezas.forEach(p => {
-        const g = new THREE.BufferGeometry();
-        g.setAttribute('position', new THREE.Float32BufferAttribute(p.vertices, 3));
-        g.setIndex(p.caras);
-        const geo = g.toNonIndexed(); geo.computeVertexNormals();
-        const metal = p.nombre === 'ordenador' || p.nombre === 'convertidor';
-        const mat = new THREE.MeshStandardMaterial({ color: p.color, roughness: metal ? 0.45 : 0.6, metalness: metal ? 0.4 : 0.05, flatShading: true, side: THREE.DoubleSide });
-        const mesh = new THREE.Mesh(geo, mat);
-        mesh.position.set(p.posicion[0], p.posicion[1], p.posicion[2]);
-        scene.add(mesh); parts.push({ mesh, base: p.posicion, exp: p.explosion });
-      });
-      addLogos(scene, renderer);
-      const l = box.querySelector('.loading'); if (l) l.remove();
-    }).catch(() => { const l = box.querySelector('.loading'); if (l) l.textContent = 'No se ha podido cargar el modelo 3D.'; });
-    function frame() {
-      t += (target - t) * (reduce ? 1 : 0.08);
-      parts.forEach(p => p.mesh.position.set(p.base[0] + p.exp[0] * t, p.base[1] + p.exp[1] * t, p.base[2] + p.exp[2] * t));
-      controls.target.z = 25 + 70 * t;
-      controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
-    }
-    frame();
-  })();
-</script>
 <script>
   // Visores 3D de los robots: modelos oficiales de Unitree (unitree_mujoco), en metros y con Z hacia arriba. Se cargan al acercarse a la vista.
   function robotViewer(id, url, cam, target, minD, maxD) {
@@ -784,6 +925,9 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
   stage.appendChild(renderer.domElement);
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true; controls.maxDistance = 40; controls.minDistance = 0.5;
+  // Giro automático lento, como el visor del Go2; se detiene en cuanto se toca el modelo.
+  controls.autoRotate = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); controls.autoRotateSpeed = 0.6;
+  renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
 
   scene.add(new THREE.HemisphereLight(0xfffaf2, 0x8a8f8c, 0.65));
   const sun = new THREE.DirectionalLight(0xffffff, 0.45); sun.position.set(-4, 10, 4); scene.add(sun);
@@ -1015,7 +1159,7 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
 
   // ---------- cámaras ----------
   const VIEWS = {
-    'sv-general': { pos: [10, 9, -3], target: [0, 1, 8] },
+    'sv-general': { pos: [-13, 7.5, 8], target: [0, 1.6, 8] },
     'sv-ventana': { pos: [0.4, 1.65, 0.9], target: [0, 1.4, 12] },
     'sv-pizarra': { pos: [-0.5, 1.7, 15.3], target: [0, 1.2, 4] },
     'sv-amarilla': { pos: [-2.2, 1.6, 12], target: [3.75, 2.2, 12] },
@@ -1086,3 +1230,18 @@ footer { background: var(--header-bg); color: #bdbdbd; font-size: 14px; }
   })();
 </script>
 </html>
+<script>
+  // Escala la recreación de la web de control al ancho disponible.
+  (function () {
+    const frames = document.querySelectorAll('.ui-frame');
+    function fit() {
+      frames.forEach(f => {
+        const ui = f.firstElementChild, k = Math.min(1, f.clientWidth / 1180);
+        ui.style.transform = 'scale(' + k + ')';
+        f.style.height = (ui.offsetHeight * k) + 'px';
+      });
+    }
+    fit(); window.addEventListener('resize', fit);
+    if (window.ResizeObserver) frames.forEach(f => new ResizeObserver(fit).observe(f));
+  })();
+</script>
